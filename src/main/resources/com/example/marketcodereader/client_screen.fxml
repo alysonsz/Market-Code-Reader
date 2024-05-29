@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.marketcodereader.ClientScreenController">
+   <children>
+      <ImageView fitHeight="324.0" fitWidth="315.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ClientDataPickerLogo.jpg" />
+         </image>
+         <VBox.margin>
+            <Insets bottom="16.0" />
+         </VBox.margin>
+      </ImageView>
+      <Label text="Nome">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="edtClientName" maxWidth="-Infinity" onKeyTyped="#edtClientNameOnTextChange" prefWidth="300.0" promptText="Nome" text="DCOMPMarket">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </VBox.margin>
+      </TextField>
+      <Label text="CPF/CNPJ (Somente números)">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="edtCPF" maxWidth="-Infinity" onKeyTyped="#edtCPFOnTextChange" prefWidth="300.0" promptText="CPF" text="95741281000140">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </VBox.margin>
+      </TextField>
+      <Button fx:id="btnPrint" alignment="CENTER" mnemonicParsing="false" onAction="#btnPrintOnAction" style="-fx-background-color: dodgerblue;" text="Imprimir" visible="false">
+         <VBox.margin>
+            <Insets bottom="8.0" top="8.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

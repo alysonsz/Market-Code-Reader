@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.marketcodereader.MainScreenController">
+   <left>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="edtBarCode" layoutX="72.0" layoutY="338.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Codigo de Barras" style="-fx-border-color: dodgerblue;">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="269.0" fitWidth="346.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/DcompTekLogo.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="131.0" layoutY="363.0" prefHeight="78.0" prefWidth="83.0">
+               <children>
+                  <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddOnAction" style="-fx-background-color: dodgerblue;" text="Adicionar">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnPop" mnemonicParsing="false" onAction="#btnPopOnAction" text="Remover" visible="false">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <Label layoutX="98.0" layoutY="315.0" text="Digite um numero de 1 a 20">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="txtProductNotExists" layoutX="54.0" layoutY="292.0" text="Produto nao existe na base de dados!" textFill="RED" visible="false">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="569.0" text="Selecione um item da lista para remove-lo">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutY="535.0" prefHeight="67.0" prefWidth="600.0" style="-fx-border-color: black; -fx-border-width: 2;">
+               <children>
+                  <Label fx:id="txtTotal" layoutX="14.0" layoutY="14.0" text="Total:">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="btnPrintNote" layoutX="495.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnPrintNoteOnAction" text="Imprimir Nota" />
+               </children>
+            </Pane>
+            <TableView fx:id="tableView" prefHeight="537.0" prefWidth="600.0" style="-fx-border-color: black; -fx-border-width: 2;">
+              <columns>
+                  <TableColumn fx:id="tbColumnCode" prefWidth="75.0" text="codigo" />
+                <TableColumn fx:id="tbColumnName" prefWidth="75.0" text="nome" />
+                  <TableColumn fx:id="tbColumnPrice" prefWidth="75.0" text="preço" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
